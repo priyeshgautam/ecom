@@ -1,12 +1,15 @@
 # React + Vite + Shadcn
 
 using React [ ui library ] with Vite [ a bundle creator ]
+
 using Tailwindss with vite [ styling library ]
+
 using Shadcn [ a component library ]
 
 #Learning 
 
 1.component 
+
 2.props
 
 #Installations
