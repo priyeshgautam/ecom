@@ -1,13 +1,32 @@
 import './App.css'
 import Card from './components/cards'
+import { Button } from "./components/ui/button.tsx"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "./components/ui/navigation-menu.tsx"
 
 function App() {
   return (
     <>  
       <h1>Mangal Baazar</h1>
       <p>Your One Stop Shop for all your needs</p>
-      
+      <NavigationMenu>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <NavigationMenuLink>Link</NavigationMenuLink>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
       <div className="flex flex-row gap-1">
+        <Button variant="outline">Click me</Button>
         <Card 
           id={1}
           name="Artwork Tee"
