@@ -1,4 +1,5 @@
 import './App.css'
+import { useState } from 'react'
 import Card from './components/cards'
 import { Button } from "./components/ui/button.tsx"
 import {
@@ -11,22 +12,31 @@ import {
 } from "./components/ui/navigation-menu.tsx"
 
 function App() {
+  const [count, setCount] = useState(0)
+
   return (
     <>  
       <h1>Mangal Baazar</h1>
       <p>Your One Stop Shop for all your needs</p>
+
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+            <NavigationMenuTrigger>Men's Clothing</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink>Link</NavigationMenuLink>
+              <NavigationMenuLink>T-Shirts</NavigationMenuLink>
+              <NavigationMenuLink>Shirts</NavigationMenuLink>
+              <NavigationMenuLink>Pants</NavigationMenuLink>
+              <NavigationMenuLink>Shoes</NavigationMenuLink>
+              <NavigationMenuLink>Accessories</NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+      
+      <Button variant="outline">Shadcn Button</Button>
+
       <div className="flex flex-row gap-1">
-        <Button variant="outline">Click me</Button>
         <Card 
           id={1}
           name="Artwork Tee"
@@ -46,6 +56,14 @@ function App() {
           price="$35"
           color="Aspen White"
         />
+      </div>
+
+      <div>
+        <h1>Counter</h1>
+        <button onClick={() => setCount((count) => count + 1)}>Increment</button>
+        <button onClick={() => setCount((count) => count - 1)}>Decrement</button>
+        <button onClick={() => setCount(0)}>Reset</button>
+        <p>Count: {count}</p>
       </div>
     </>
   )
