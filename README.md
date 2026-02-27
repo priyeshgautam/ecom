@@ -1,9 +1,19 @@
 # React + Vite + Shadcn
 
-using Vite [ a bundle creator ] built ui by React [ ui library ]
-
-using Tailwindss [ styling library ]
-
+using React [ ui library ] with Vite [ a bundle creator ]
+using Tailwindss with vite [ styling library ]
 using Shadcn [ a component library ]
 
-got to know about component and props
+#Learning 
+
+1.component 
+2.props
+
+#Installations
+
+https://vite.dev/guide/#scaffolding-your-first-vite-project
+
+https://tailwindcss.com/docs/installation/using-vite
+
+https://ui.shadcn.com/docs/installation/vite 
+
