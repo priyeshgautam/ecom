@@ -20,3 +20,6 @@ https://tailwindcss.com/docs/installation/using-vite
 
 https://ui.shadcn.com/docs/installation/vite 
 
+<img width="1470" height="956" alt="Screenshot 2026-02-27 at 4 38 43 PM" src="https://github.com/user-attachments/assets/c0d0d11f-70d2-4f3f-b7cb-863c21222a8e" />
+
+
