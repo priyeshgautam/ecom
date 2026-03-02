@@ -105,7 +105,10 @@ function App() {
               we  are passing function [addToQueue] in props of component [ QueueForm ]
            */}
           <QueueForm onAdd={addToQueue}/> 
-          <QueueDisplay/>
+          <QueueDisplay queue={queue} 
+          onUpdateStatus={updateStatus}
+          removeFromQueue={removeFromQueue}
+          />
         </div>
       </div>
 
