@@ -13,6 +13,7 @@ import {
 
 function App() {
   const [count, setCount] = useState(0)
+  const [input, setInput] = useState(0)
 
   return (
     <>  
@@ -60,11 +61,17 @@ function App() {
 
       <div>
         <h1>Counter</h1>
-        <button onClick={() => setCount((count) => count + 1)}>Increment</button>
-        <button onClick={() => setCount((count) => count - 1)}>Decrement</button>
+        <button variant="outline" onClick={() => setCount((count) => count + 1)}>Increment</button>
+        <button variant="secondary"onClick={() => setCount((count) => count - 1)}>Decrement</button>
         <button onClick={() => setCount(0)}>Reset</button>
         <p>Count: {count}</p>
       </div>
+
+      <input type="number" value={input} onChange={(e) => {
+        setInput(Number(e.target.value)); 
+        setCount(Number(e.target.value)) 
+        }} />
+
     </>
   )
 }
