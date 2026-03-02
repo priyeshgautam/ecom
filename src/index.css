@@ -49,7 +49,15 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+
+/* Queue status colors */
+--warning: #facc15;  /* yellow for pending */
+--success: #22c55e;  /* green for serving */
+--info: #38bdf8;     /* blue for completed */
+--text: #e5e7eb;     /* light gray default text */
 }
+
 
 a {
   font-weight: 500;
@@ -66,6 +74,41 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+
+
+.queue-display h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.queue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.queue-item {
+  background-color: #181818;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.customer-info h3 {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.customer-info p {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 h1 {

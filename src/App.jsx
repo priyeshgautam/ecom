@@ -30,7 +30,7 @@ function App() {
   
   const removeFromQueue = (id) => {
     // remove item from queue
-    setQueue(queue.filter((customer)=> customer.id!=id))
+    setQueue(queue.filter((customer) => customer.id !== id))
   }
 
   return (
