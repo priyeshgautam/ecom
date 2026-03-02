@@ -1,6 +1,8 @@
 import './App.css'
 import { useState } from 'react'
 import Card from './components/cards'
+import QueueForm from "./components/QueueForm"
+import QueueDisplay from "./components/QueueDisplay"
 import { Button } from "./components/ui/button.tsx"
 import {
   NavigationMenu,
@@ -14,6 +16,22 @@ import {
 function App() {
   const [count, setCount] = useState(0)
   const [input, setInput] = useState(0)
+  const [queue, setQueue] = useState([])
+
+  const addToQueue = (customer) => {
+    // add new item to queue
+    setQueue([...queue, {...customer, status: 'pending', id:Date.now()}]);
+  }
+
+  const updateStatus = (id, newStatus) => {
+    // update the status of the item in the queue
+    setQueue(queue.map((customer)=> customer.id == id ? {...customer, status: newStatus} : customer))
+  }
+  
+  const removeFromQueue = (id) => {
+    // remove item from queue
+    setQueue(queue.filter((customer)=> customer.id!=id))
+  }
 
   return (
     <> 
@@ -77,9 +95,18 @@ function App() {
         }} />
       </div>
 
-      <div className="border-b border-gray-300 pb-6 mb-6">
-        <h1>Queue Management System</h1>
-        <p>Efficiently manage and track customers</p>
+      <div className="border-b border-gray-800 pb-12 mb-6">
+        <div className="text-center mb-10">
+          <h1 className="text-3xl font-bold text-violet-400">Queue Management Application</h1>
+          <p className="text-zinc-400 mt-2">Manage your customers efficiently</p>
+        </div>
+        <div className="flex flex-row items-start gap-12 justify-center">
+          {/* 
+              we  are passing function [addToQueue] in props of component [ QueueForm ]
+           */}
+          <QueueForm onAdd={addToQueue}/> 
+          <QueueDisplay/>
+        </div>
       </div>
 
     </>
