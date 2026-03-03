@@ -6,11 +6,23 @@ using Tailwindss with vite [ styling library ]
 
 using Shadcn [ a component library ]
 
+#Deployed on vercel
+https://ecom-weld-kappa.vercel.app/
+
+
 #Learning 
 
 1.component 
 
 2.props
+
+3.hooks 
+
+4.state 
+
+5.multi components 
+
+6.form and conditional rendering
 
 #Installations
 
