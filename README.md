@@ -24,6 +24,14 @@ https://ecom-weld-kappa.vercel.app/
 
 6.form and conditional rendering
 
+7.Button with props
+
+8.useRef and forwardRef
+
+9.use context
+
+10.create custom hook
+
 #Installations
 
 https://vite.dev/guide/#scaffolding-your-first-vite-project

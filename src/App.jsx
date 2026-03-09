@@ -1,8 +1,8 @@
 import './App.css'
 import { useState } from 'react'
-import Card from './components/cards'
+import Card from './components/cards.jsx'
 import QueueForm from "./components/QueueForm"
-import QueueDisplay from "./components/QueueDisplay"
+import QueueDisplay from "./components/QueueDisplay.jsx"
 import { Button } from "./components/ui/button.tsx"
 import {
   NavigationMenu,
@@ -12,6 +12,14 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "./components/ui/navigation-menu.tsx"
+import BasicProps from "./components/3.BasicProps.jsx";
+import RefProps from "./components/3.RefProps.jsx";
+import ChildrenProps from "./components/3.ChildrenProps.jsx";
+import ComplexProps from "./components/3.ComplexProps.jsx";
+import ThemeToggler, {
+  ThemeProvider,
+  useTheme,
+} from "./components/3.ThemeToggler.jsx";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,6 +43,7 @@ function App() {
 
   return (
     <> 
+    {/* Banner */}
       <div className="bg-gradient-to-r from-purple-900 via-violet-800 to-indigo-900 text-white px-4 py-4 rounded-lg mb-6 shadow-lg flex items-center gap-3">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <circle cx="12" cy="12" r="10" strokeWidth="2" />
@@ -48,6 +57,8 @@ function App() {
         </div>
       </div>
 
+
+      {/* Section 1 */}
       <div className="border-b border-gray-300 pb-6 mb-6">
         <h1>Mangal Baazar</h1>
         <p>Your One Stop Shop for all your needs</p>
@@ -104,7 +115,8 @@ function App() {
           </ol>
         </div>
       </div>
-
+      
+      {/* Section 2 */}
       <div className="border-b border-gray-300 pb-6 mb-6 justify-center">
         <h1>Counter</h1>
         <button variant="outline" onClick={() => setCount((count) => count + 1)}>Increment</button>
@@ -126,6 +138,7 @@ function App() {
         </div>
       </div>
 
+      {/* Section 3 */}
       <div className="border-b border-gray-800 pb-12 mb-6">
         <div className="text-center mb-10">
           <h1 className="text-3xl font-bold text-violet-400">Queue Management Application</h1>
@@ -156,7 +169,24 @@ function App() {
         </div>
       </div>
 
-      <div className="mb-8 text-center">
+      {/* Section 4 */}
+      <div>
+        <ThemeProvider>
+          <AppContent />
+        </ThemeProvider>
+      </div>
+
+      {/* Footer */}
+      <div>
+        <Footer/>
+      </div>
+    </>
+  )
+}
+
+function Footer(){
+  return (
+    <div className="mb-8 text-center">
         <a
           href="https://portfolio-plain-ten.vercel.app/"
           target="_blank"
@@ -166,9 +196,106 @@ function App() {
           Visit my Portfolio
         </a>
       </div>
-
-    </>
   )
 }
+function Navigation() {
+  const isDark = true;
 
+  const sections = [
+    { id: "basic", label: "Basic Props", icon: "📦" },
+    { id: "ref", label: "ref Props", icon: "🔗" },
+    { id: "children", label: "children Props", icon: "👶" },
+    { id: "complex", label: "complex Props", icon: "🧩" },
+    { id: "theme", label: "theme Props", icon: "🎨" },
+  ];
+
+  return (
+    <nav
+      className={`sticky top-0 z-50 shadow-md transition-colors ${
+        isDark ? "bg-gray-800" : "bg-white"
+      }`}
+    >
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex flex-wrap gap-2 justify-center">
+          {sections.map((section) => (
+            <button
+              key={section.id}
+              className={`
+                px-4 py-2 rounded-lg font-medium transition-all bg-blue-600 text-white
+                hover:bg-blue-800
+              `}
+            >
+              <span className="mr-2">{section.icon}</span>
+              {section.label}
+            </button>
+          ))}
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+function AppContent() {
+  // const isDark = true;
+  const { isDark } = useTheme();
+  return (
+    <div
+      className={`min-h-screen bg-gray-800 ${
+        isDark ? "bg-gray-900" : "bg-purple-400"
+      }`}
+    >
+      <Navigation />
+      <div className="container mx-auto px-4 py-8">
+        <header
+          className={`text-center mb-12 transition-colors ${
+            isDark ? "text-white" : "text-gray-800"
+          }`}
+        >
+          <h1 className="text-5xl font-bold mb-4">React Props Explained</h1>
+          <p
+            className={`text-xl ${isDark ? "text-gray-300" : "text-gray-600"}`}
+          >
+            A comprehensive guide to understanding props in React
+          </p>
+          <div
+            className={`mt-4 inline-block px-6 py-2 rounded-full ${
+              isDark ? "bg-gray-800" : "bg-white"
+            } shadow-md`}
+          >
+            <span className="font-semibold">
+              Built with Bun + Vite + React + Tailwind CSS
+            </span>
+          </div>
+        </header>
+        <div className="space-y-8">
+          <div id="basic" className="scroll-mt-200">
+            <BasicProps />
+          </div>
+
+          <div id="basic" className="scroll-mt-200">
+            <ChildrenProps />
+          </div>
+          <div id="basic" className="scroll-mt-200">
+            <ComplexProps />
+          </div>
+          <div id="basic" className="scroll-mt-200">
+            <RefProps />
+          </div>
+          <div id="basic" className="scroll-mt-200">
+            <ThemeToggler />
+          </div>
+        </div>
+        <footer
+          className={`mt-12 text-center pb-8 transition-colors ${
+            isDark ? "text-gray-400" : "text-gray-600"
+          }`}
+        >
+          <p className="text-sm">
+            Made with ❤️ using Bun, Vite, React, and Tailwind CSS
+          </p>
+        </footer>
+      </div>
+    </div>
+  );
+}
 export default App
