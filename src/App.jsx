@@ -20,6 +20,10 @@ import ThemeToggler, {
   ThemeProvider,
   useTheme,
 } from "./components/3.ThemeToggler.jsx";
+import { useCart } from "./hooks/useCart.js";
+import { products } from "./data/products.js";
+import ProductCard from "./components/ProductCard.jsx";
+import Cart from "./components/Cart.jsx";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -40,6 +44,8 @@ function App() {
     // remove item from queue
     setQueue(queue.filter((customer) => customer.id !== id))
   }
+
+  const { cart, addToCart, removeFromCart, updateQuantity, total } = useCart();
 
   return (
     <> 
@@ -170,10 +176,56 @@ function App() {
       </div>
 
       {/* Section 4 */}
-      <div>
-        <ThemeProvider>
-          <AppContent />
-        </ThemeProvider>
+      <div className="border-b border-gray-800 pb-12 mb-6">
+        <div>
+          <ThemeProvider>
+            <AppContent />
+          </ThemeProvider>
+        </div>
+        <div className='learnings mt-5' style={{ textAlign: "left" }}>
+          <p>Learnings:</p>
+          <ol style={{ listStyleType: "decimal" }}>
+            <li>Using props: passing functions and var</li>
+            <li>Using dynamic button component</li>
+            <li>Child component</li>
+            <li>Nested Child components</li>
+            <li>Using ref hook</li>
+            <li>Using context for global state</li>
+          </ol>
+        </div>
+      </div>
+      
+
+      {/* Section 5 */}
+      <div className="border-b border-gray-800 pb-12 mb-6">
+        <div className="Shopping-cart">
+            <h1>Shopping Cart</h1>
+          <div className="products">
+            <div>
+              {products.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onAddToCart={addToCart}
+                />
+              ))}
+            </div>
+            <Cart
+              cart={cart}
+              onUpdateQuantity={updateQuantity}
+              onRemove={removeFromCart}
+              total={total}
+            />
+          </div>
+          <div className='learnings mt-5' style={{ textAlign: "left" }}>
+          <p>Learnings:</p>
+          <ol style={{ listStyleType: "decimal" }}>
+            <li>Using useEffect hook</li>
+            <li>Using useMemo hook</li>
+            <li>Using local storage for saving data</li>
+          </ol>
+        </div>
+        </div>
       </div>
 
       {/* Footer */}

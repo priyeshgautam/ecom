@@ -9,10 +9,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -55,7 +51,9 @@
 --warning: #facc15;  /* yellow for pending */
 --success: #22c55e;  /* green for serving */
 --info: #38bdf8;     /* blue for completed */
---text: #e5e7eb;     /* light gray default text */
+--text: #111827;     /* default text for light UI */
+--card-bg: #ffffff;  /* used by shopping cart cards */
+--danger: #ef4444;   /* used by remove buttons */
 }
 
 
@@ -206,6 +204,9 @@ button:focus-visible {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --text: #e5e7eb;
+  --card-bg: #181818;
+  --danger: #ef4444;
 }
 
 @layer base {

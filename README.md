@@ -32,6 +32,8 @@ https://ecom-weld-kappa.vercel.app/
 
 10.create custom hook
 
+11.use useEffect hook
+
 #Installations
 
 https://vite.dev/guide/#scaffolding-your-first-vite-project
@@ -39,6 +41,8 @@ https://vite.dev/guide/#scaffolding-your-first-vite-project
 https://tailwindcss.com/docs/installation/using-vite
 
 https://ui.shadcn.com/docs/installation/vite 
+
+https://react-icons.github.io/react-icons/icons/fa6/
 
 <img width="1470" height="956" alt="Screenshot 2026-02-27 at 4 38 43 PM" src="https://github.com/user-attachments/assets/c0d0d11f-70d2-4f3f-b7cb-863c21222a8e" />
 
