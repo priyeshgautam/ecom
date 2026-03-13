@@ -1,4 +1,4 @@
-import CartItem from "./CartItem.jsx";
+import CartItem from "./5.CartItem.jsx";
 
 function Cart({ cart, onUpdateQuantity, onRemove, total }) {
   if (cart.length === 0) {
