@@ -34,6 +34,8 @@ https://ecom-weld-kappa.vercel.app/
 
 11.use useEffect hook
 
+12.State management using zustand
+
 #Installations
 
 https://vite.dev/guide/#scaffolding-your-first-vite-project

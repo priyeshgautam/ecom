@@ -1,8 +1,8 @@
 import './App.css'
 import { useState } from 'react'
-import Card from './components/cards.jsx'
-import QueueForm from "./components/QueueForm"
-import QueueDisplay from "./components/QueueDisplay.jsx"
+import Card from './components/2.cards.jsx'
+import QueueForm from "./components/4.QueueForm.jsx"
+import QueueDisplay from "./components/4.QueueDisplay.jsx"
 import { Button } from "./components/ui/button.tsx"
 import {
   NavigationMenu,
@@ -22,8 +22,10 @@ import ThemeToggler, {
 } from "./components/3.ThemeToggler.jsx";
 import { useCart } from "./hooks/useCart.js";
 import { products } from "./data/products.js";
-import ProductCard from "./components/ProductCard.jsx";
-import Cart from "./components/Cart.jsx";
+import ProductCard from "./components/5.ProductCard.jsx";
+import Cart from "./components/5.Cart.jsx";
+import Counter from "./components/6.Counter";
+import Posts from "./components/6.Posts";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -227,6 +229,14 @@ function App() {
         </div>
         </div>
       </div>
+
+      {/* Section 6 */}
+
+      <>
+      <h1>Zustand</h1>
+      <Counter />
+      <Posts />
+      </>
 
       {/* Footer */}
       <div>
